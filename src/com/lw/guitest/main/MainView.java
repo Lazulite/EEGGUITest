@@ -81,14 +81,23 @@ public class MainView extends JFrame{
 		
 		// Button Item
 
-		JButton btnLoad = new JButton("Load");
-		btnLoad.setIcon(new ImageIcon(EEGGUI.class.getResource("/com/lw/guit/resource/reload_alt.png")));
+		JButton btnLoad = new JButton("");
+		btnLoad.setIcon(new ImageIcon(MainView.class.getResource("/com/lw/guit/resource/brainstorming.png")));
 		btnLoad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnStart = new JButton("Start");
+		
+
+		JButton btnLoad_1 = new JButton("");
+		btnLoad_1.setIcon(new ImageIcon(MainView.class.getResource("/com/lw/guit/resource/heart.png")));
+		btnLoad_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
+		JButton btnStart = new JButton("");
 		btnStart.setIcon(new ImageIcon(EEGGUI.class.getResource("/com/lw/guit/resource/playback_play.png")));
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -472,10 +481,12 @@ public class MainView extends JFrame{
 			}
 		});
 		
+		// Tab panel3
 		JPanel tabPanel_2 = new JPanel();
 		tabPanel_2.setBackground(new Color(255, 255, 255));
-		tabbedPane.addTab(" Analysis", null, tabPanel_2, null);
+		tabbedPane.addTab("Estate", null, tabPanel_2, null);
 		tabPanel_2.setLayout(null);
+		
 		//UIManager.put("TabbedPane.selected", Color.black);
 		
 		
@@ -486,11 +497,12 @@ public class MainView extends JFrame{
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
-							.addComponent(btnCapture, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
-							.addComponent(btnAnalysis, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
-							.addComponent(btnStart))
-						.addComponent(btnLoad, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE))
+						.addComponent(btnLoad_1, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+							.addComponent(btnLoad, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+							.addComponent(btnCapture, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+							.addComponent(btnAnalysis, GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+							.addComponent(btnStart, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 					.addGap(18)
 					.addComponent(tabbedPane, GroupLayout.DEFAULT_SIZE, 1047, Short.MAX_VALUE))
 		);
@@ -500,14 +512,19 @@ public class MainView extends JFrame{
 					.addGap(20)
 					.addComponent(btnLoad)
 					.addGap(18)
+					.addComponent(btnLoad_1, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
 					.addComponent(btnStart)
 					.addGap(18)
 					.addComponent(btnAnalysis)
 					.addGap(18)
 					.addComponent(btnCapture)
-					.addContainerGap(397, Short.MAX_VALUE))
+					.addContainerGap(334, Short.MAX_VALUE))
 				.addComponent(tabbedPane, GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
 		);
+		
+		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("Analysis", null, tabbedPane_1, null);
 
 		contentPane.setLayout(gl_contentPane);
 		
